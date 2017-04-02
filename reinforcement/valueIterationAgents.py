@@ -70,6 +70,7 @@ class ValueIterationAgent(ValueEstimationAgent):
           value function stored in self.values.
         """
         "*** YOUR CODE HERE ***"
+        # print self.mdp.getTransitionStatesAndProbs(state, action)
         return sum([prob * (self.mdp.getReward(state, action, nextState) +
                             (self.discount * self.getValue(nextState)))
                     for nextState, prob in self.mdp.getTransitionStatesAndProbs(state, action)])
